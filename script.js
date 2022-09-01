@@ -33,9 +33,8 @@ const fireType = pokémon.filter((p) => p.types.includes("fire"));
 console.log(fireType);
 
 // more than one type
-// const moreThanOneType = pokémon.map((p) => p.types[length] > 0);
-// console.logp(pokémon.types.filter((i) => i.length > 0));
-// console.log(moreThanOneType);
+const moreThanOneType = pokémon.filter((i) => i.types.length > 1);
+console.log(moreThanOneType);
 
 // just the name of the pokémon
 const pokémonname = pokémon.map((p) => p.name);
@@ -48,6 +47,24 @@ const pokémonNameId = pokémon
 console.log(pokémonNameId);
 
 // name of the pokémon whose only type is poison
-
-const typeIsPoison = pokémon.filter((p) => p.types.includes("poison"));
+const typeIsPoison = pokémon.filter(
+  (p) => p.types.includes("poison") && p.types.length === 1
+);
 console.log(typeIsPoison);
+
+// an array containing just the first type of all the pokémon whose second type is "flying"
+const flyingType = pokémon
+  .filter((p) => p.types.includes("flying"))
+  .map((t) => t.types[0]);
+console.log(flyingType);
+
+// a count of the number of pokémon that are "normal" type
+
+// const countNormalType 
+// console.log(
+//   pokémon
+//     .filter((p) => p.types.includes("normal"))
+//     .reduce((total, c) => {
+//       total + ;
+//     }, 0)
+// );
